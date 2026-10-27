@@ -7,8 +7,12 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-const updated = '2026-09-11';
-const analyticsEnabled = import.meta.env.PROD && import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true' && Boolean(import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN);
+const updated = '2026-10-27';
+// The production Pages deployment injects its Web Analytics beacon at the edge.
+const analyticsEnabled = import.meta.env.PROD && (
+  process.env.CF_PAGES === '1' ||
+  (import.meta.env.PUBLIC_ENABLE_ANALYTICS === 'true' && Boolean(import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN))
+);
 ---
 
 <section class="bg-paper">

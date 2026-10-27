@@ -49,9 +49,9 @@ checks are recorded in `design-qa.md`. Local comparison images are in the ignore
 - The rejected redesign is not generated. A local source backup is kept in ignored `design-previews/`.
 
 All fonts, images and icons are served locally. There are no forms or embeds.
-Analytics is disabled by default, including production previews. Enabling the
-existing Cloudflare integration for a future live build requires both variables
-in `.env.example`; the privacy notice reflects that build setting.
+Cloudflare Pages injects Web Analytics in the production deployment. Local
+builds do not enable analytics by default. The optional manual integration uses
+the variables in `.env.example`; do not enable it alongside Pages injection.
 
 ## Assets and licenses
 
